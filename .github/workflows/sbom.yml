@@ -31,8 +31,6 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      - name: Install system dependencies
-        run: sudo apt update && sudo apt install -y gettext unzip
       - name: Install Python dependencies
         run: pip3 install -U "prisma-sbom-submit"
       - name: Create SBOM
