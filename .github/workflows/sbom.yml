@@ -32,7 +32,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Install Python dependencies
-        run: pip3 install -U "prisma-sbom-submit"
+        run: pip3 install -U "prisma-sbom-submit>=0.0.7"
       - name: Create SBOM
         run: NPM=$(which npm) prisma-sbom-submit collect . sbom.json
       - name: Submit SBOM
