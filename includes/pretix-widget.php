@@ -14,6 +14,7 @@ final class Pretix_Widget extends Base {
     public $settings;
     public $render;
     public $cache;
+	public $languages;	
     public $debug = false;
 
     /**
