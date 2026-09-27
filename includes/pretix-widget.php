@@ -104,6 +104,8 @@ final class Pretix_Widget extends Base {
      */
     public function enqueue_frontend_assets() {
         global $post;
+		// prevents errors when post_content is null
+		if ( empty( $post->post_content ) ) { return; }			
         if (has_shortcode($post->post_content, 'pretix_widget') || has_block('pretix/widget')) {
             wp_enqueue_style(
                 'pretix-widget-style',
